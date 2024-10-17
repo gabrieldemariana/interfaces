@@ -1,0 +1,77 @@
+/* SELECTORES Cf. https://www.w3schools.com/cssref/css_selectors.php MIRAR PARA ESTUDIAR */
+
+/* El selector * sirve para aplicarse a todo el html.
+Esto es un Reset CSS, https://es.wikipedia.org/wiki/Reset_CSS
+Paco recomienda ponerlo siempre al inicio de una página. */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* El selector . sirve para hacer referencia a las clases del html con ese nombre */
+.cabecera {
+    color: red;
+}
+
+.grande {
+    font-size: 25px;
+}
+
+.peque {
+    font-size: 12px;
+}
+
+.pie {
+    background-color: blanchedalmond;
+}
+
+/* El selector # sirve para hacer referencia al id con ese nombre. EL ID DEBE SER ÚNICO */
+#menu {
+    
+    font-size: 25px;
+}
+
+#li {
+    font-size: 8 px;
+}
+
+/* Atributo */
+[lang="en"] {
+    color: blue;
+    font-style: italic;
+}
+
+#menu a {
+    text-decoration: none;
+    cursor: hand; /* Cambia el cursor al pasar por encima del enlace */
+} /* Elimina el subrayado de los enlaces en el div menu. Usado prácticamente siempre */
+
+a:hover {
+    color: red;
+} /* Cambia el color del enlace cuando pasas el cursor por encima */
+
+a:visited {
+    color: green;
+} /* Cambia el color del enlace cuando ya se ha visitado */
+
+a:active {
+    color: blue;
+} /* Cambia el color del enlace cuando se pulsa */
+
+a:focus {
+    color: orange;
+} /* Cambia el color del enlace cuando se enfoca */
+
+a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: black; /* Color del texto */
+    background-color: red; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 5px;
+}
+
+a:hover {
+    color: white; /* Color del texto */
+    background-color: blue;
+}
