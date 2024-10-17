@@ -106,3 +106,26 @@ html {
           margin-bottom: 10px;
       }
   }
+
+  .carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+} /* Este es el contenedor del carrusel. Lo que hace es lo siguiente:
+- El width se establece en 100% para que ocupe todo el ancho disponible.
+- El overflow se establece en hidden para ocultar cualquier contenido que exceda el tamaño del contenedor.
+- El position se establece en relative para que el contenedor sea relativo al contexto de su elemento padre.
+*/
+
+.carousel img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel img.active {
+    opacity: 1;
+}
