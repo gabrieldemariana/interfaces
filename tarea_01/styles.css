@@ -3,122 +3,187 @@
 html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
-  }
-  body {
-    margin: 0;
-  }
-  /* Fin de la normalización */
-  
-  /* Estilos generales */
-  body {
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      color: #333;
-  }
-  
-  .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-  }
-  
-  /* Estilos del encabezado */
-  header {
-      background-color: #4a4a4a;
-      color: #fff;
-      padding: 1rem 0;
-  }
-  
-  header h1 {
-      margin: 0;
-  }
-  
-  /* Estilos de navegación (inspirado en css3-menu-generator) */
-  /* @https://www.cssportal.com/css3-menu-generator/ */
-  nav ul {
-      list-style-type: none;
-      padding: 0;
-  }
-  
-  nav ul li {
-      display: inline;
-      margin-right: 20px;
-  }
-  
-  nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-      color: #ffd700;
-  }
-  
-  /* Estilos del contenido principal */
-  main {
-      padding: 2rem 0;
-  }
-  
-  section {
-      margin-bottom: 2rem;
-  }
-  
-  h2 {
-      color: #4a4a4a;
-  }
-  
-  img {
-      max-width: 100%;
-      height: auto;
-  }
-  
-  /* Estilos de la barra lateral */
-  aside {
-      background-color: #f4f4f4;
-      padding: 1rem;
-  }
-  
-  /* Estilos del pie de página */
-  footer {
-      background-color: #333;
-      color: #fff;
-      padding: 1rem 0;
-      text-align: center;
-  }
-  
-  .social-icons a {
-      color: #fff;
-      font-size: 1.5rem;
-      margin: 0 10px;
-      transition: color 0.3s ease;
-  }
-  
-  .social-icons a:hover {
-      color: #ffd700;
-  }
-  
-  /* Estilos responsivos */
-  @media (max-width: 768px) {
-      nav ul li {
-          display: block;
-          margin-bottom: 10px;
-      }
-  }
+}
 
-  .carousel {
+body {
+    background-color: #F5F5F5;
+    margin: 0;
+}
+
+/* FIN DE LA NORMALIZACIÓN */
+
+
+
+/* Estilos generales */
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Contenedor general para centrar el contenido */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Contenedor para el encabezado */
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0 rem;
+}
+
+/* Contenedor para el logo */
+.logo-container {
+    margin-bottom: -0.5rem;
+}
+
+/* Tamaño del logo y ajuste de la altura */
+.header-logo {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Estilos (color y padding) del encabezado */
+header {
+    background-color: #FEF200;
+    padding: 1rem 0 0;
+}
+
+/* Estilos de navegación (inspirado en css3-menu-generator) */
+/* @https://www.cssportal.com/css3-menu-generator/ */
+nav {
     width: 100%;
-    overflow: hidden;
+    padding: 0rem 4;
+    margin-bottom: 0.25rem;
+}
+
+/* Contenedor para la lista de navegación */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 1 auto;
+}
+
+nav ul li {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    padding: 0 20px;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    /* Asegura que el enlace ocupe todo el espacio del li */
+    padding: 5px 0;
+    /* Añade un poco de padding vertical */
+}
+
+nav ul li:first-child {
+    padding-left: 0;
+    /* Elimina el padding izquierdo del primer elemento */
+}
+
+nav ul li:last-child {
+    padding-right: 0;
+    /* Elimina el padding derecho del último elemento */
+}
+
+nav ul li a:hover {
+    color: #0000FF;
+    /* Cambia a azul al pasar el cursor */
+}
+
+/* ESTILOS DEL CONTENIDO PRINCIPAL */
+main {
+    padding: 2rem 0;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #4a4a4a;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos de la barra lateral */
+aside {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #FEF200;
+    /* Amarillo */
+    color: #333;
+    /* Tono oscuro de la fuente */
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Estilos de los iconos sociales en el footer */
+.social-icons a {
+    color: #333;
+    /* Color original de los iconos */
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    /* Transición suave del cambio de color cuando se pasa el cursor */
+}
+
+.social-icons a:hover {
+    color: #0000FF;
+    /* Cambia a azul al pasar el cursor */
+}
+
+/* Estilos responsivos para la navegación en móvil */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+/* Estilos del carousel de imágenes */
+.carousel {
+    width: 100%;
+    height: 400px;
     position: relative;
-} /* Este es el contenedor del carrusel. Lo que hace es lo siguiente:
-- El width se establece en 100% para que ocupe todo el ancho disponible.
-- El overflow se establece en hidden para ocultar cualquier contenido que exceda el tamaño del contenedor.
-- El position se establece en relative para que el contenedor sea relativo al contexto de su elemento padre.
-*/
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
 
 .carousel img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -128,4 +193,133 @@ html {
 
 .carousel img.active {
     opacity: 1;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1.5s ease-in-out;
+}
+
+.slide-wrapper {
+    min-width: 100%;
+    /* Aspect ratio 18:6 (equivalente a 3:1) */
+    padding-top: 33.33%; /* (6 / 18) * 100% = (1 / 3) * 100% */
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos del contenedor de productos */
+.product-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Estilos de los productos individuales */
+.product {
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de zoom al pasar el cursor sobre los productos */
+.product:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos de las imágenes de los productos */
+.product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Estilos del título de los productos */
+.product h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Estilos de los enlaces de los productos */
+.product a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilos responsivos para la disposición de los productos en móvil */
+@media (max-width: 768px) {
+    .product {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 100%;
+    }
+}
+
+/* Estilos del formulario de contacto */
+#contacto {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contacto input,
+#contacto textarea,
+#contacto button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#contacto input,
+#contacto button {
+    height: 40px;
+}
+
+#contacto textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#contacto button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contacto button:hover {
+    background-color: #45a049;
 }
