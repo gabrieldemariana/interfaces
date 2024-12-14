@@ -8,29 +8,12 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="auth.js" defer></script>
+    <script src="auth.js" type="module" defer></script>
     <link rel="icon" type="image/png" href="Images/favIconHH.png">
 </head>
 
-<body>
-    <!-- Header similar al original -->
-    <header>
-        <div class="container">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="Images/logo.gif" alt="Happy Hump Logo" class="header-logo">
-                </a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#acerca">About us</a></li>
-                    <li><a href="index.html#servicios">Products</a></li>
-                    <li><a href="index.html#contacto">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<body class="auth-form-page">
+    <div id="header-placeholder"></div>
 
     <main>
         <div class="container">
@@ -82,7 +65,7 @@
                         <i class="fas fa-lock"></i>
                         <input type="password" id="password" placeholder="Password" required>
                         <span class="password-toggle">
-                            <i class="fas fa-eye toggle-password" onclick="togglePassword('password')"></i>
+                            <i class="fas fa-eye toggle-password" data-toggle="password"></i>
                         </span>
                     </div>
 
@@ -90,7 +73,7 @@
                         <i class="fas fa-lock"></i>
                         <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
                         <span class="password-toggle">
-                            <i class="fas fa-eye toggle-password" onclick="togglePassword('confirmPassword')"></i>
+                            <i class="fas fa-eye toggle-password" data-toggle="confirmPassword"></i>
                         </span>
                     </div>
 
@@ -103,33 +86,24 @@
                     </div>
 
                     <button type="submit">Create Account</button>
-                    <p class="auth-link">Already have an account? <a href="signin.html">Sign in here.</a></p>
+                    <p class="auth-link">Already have an account? <a href="signin.html" target="_blank" rel="noopener noreferrer">Sign in here.</a></p>
                 </form>
             </section>
         </div>
     </main>
 
-    <!-- Footer igual que index.html -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
+
     <div id="lopdModal" class="modal">
         <div class="modal-content">
             <span class="close-button" onclick="cerrarLOPD()">&times;</span>
             <h3>Terms and Conditions</h3>
-            <p>Esta página web es propiedad de Happy Hump con NIF n.º F34258923, domicilio en Calle Francisco Silvela 123, 28004 Madrid e inscrita en el Registro Mercantil de Madrid con los siguientes datos de inscripción Tomo 1234, Folio 56, Sección 8.</p>
-            <p>Para cualquier consulta o propuesta, contáctenos en el e-mail info@happyhump.com o en el teléfono 912345678.</p>
-            <p>Esta página web se rige por la normativa exclusivamente aplicable en España.</p>
+            <p>This website is owned by Happy Hump with Tax ID No. F34258923, located at Calle Francisco Silvela 123, 28004 Madrid, and registered in the Commercial Registry of Madrid with the following registration details: Volume 1234, Page 56, Section 8.</p>
+            <p>For any inquiries or suggestions, please contact us at the email info@happyhump.com or by phone at +34 912345678.</p>
+            <p>This website is governed exclusively by the regulations applicable in Spain.</p>
         </div>
     </div>
+
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
         import { getAuth } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';

@@ -1,135 +1,73 @@
-import { auth, db } from './firebase-config.js';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+document.addEventListener('DOMContentLoaded', function() {
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    if (headerPlaceholder) {
+        headerPlaceholder.innerHTML = `
+            <header>
+                <div class="container">
+                    <div class="logo-container">
+                        <a href="index.html">
+                            <img src="Images/logo.gif" alt="Happy Hump Logo" class="header-logo">
+                        </a>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#acerca">About us</a></li>
+                            <li><a href="index.html#servicios">Products</a></li>
+                            <li><a href="statistics.html">Statistics</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="signin.html" class="signin-btn">
+                                <i class="fas fa-user"></i> Sign In</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>`;
+    }
 
-// Función para el registro
-async function handleSignUp(event) {
-    event.preventDefault();
-    
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const nombre = document.getElementById('nombre').value;
-    const fechaNacimiento = document.getElementById('fechaNacimiento').value;
-    // ... obtener resto de campos del formulario
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    if (footerPlaceholder) {
+        footerPlaceholder.innerHTML = `
+            <footer>
+                <div class="container">
+                    <p>&copy; 2024 All rights reserved.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/ucamuniversidad/?locale=es_ES" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/ucam_deportes?lang=en" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/fpsanantonio/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i></a>
+                        <a href="https://es.linkedin.com/school/universidad-catolica-san-antonio-de-murcia/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </footer>`;
+    }
 
-    try {
-        // Crear usuario en Firebase Auth
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    // Función unificada para alternar la visibilidad de la contraseña
+    function togglePasswordVisibility(inputId) {
+        const passwordInput = document.getElementById(inputId);
+        const toggleIcon = document.querySelector(`[data-toggle="${inputId}"]`);
         
-        // Guardar datos adicionales en Firestore
-        await addDoc(collection(db, "usuarios"), {
-            uid: userCredential.user.uid,
-            nombre: nombre,
-            email: email,
-            fechaNacimiento: fechaNacimiento,
-            fechaRegistro: serverTimestamp()
-            // ... resto de campos
+        if (passwordInput && toggleIcon) {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+    }
+
+    // Event listeners para los botones de toggle
+    const toggleButtons = document.querySelectorAll('.toggle-password');
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetInput = this.getAttribute('data-toggle');
+            togglePasswordVisibility(targetInput);
         });
-
-        alert('¡Registro exitoso!');
-        window.location.href = 'signin.html';
-    } catch (error) {
-        alert('Error en el registro: ' + error.message);
-    }
-}
-
-// Función para el login
-async function handleSignIn(event) {
-    event.preventDefault();
-    
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    try {
-        // Autenticar usuario
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        
-        // Registrar fecha y hora de inicio de sesión
-        await addDoc(collection(db, "sesiones"), {
-            uid: userCredential.user.uid,
-            fechaLogin: serverTimestamp()
-        });
-
-        alert('¡Inicio de sesión exitoso!');
-        window.location.href = 'index.html';
-    } catch (error) {
-        alert('Error en el inicio de sesión: ' + error.message);
-    }
-}
-
-// Función para validar el formulario de registro
-function validateSignUp(event) {
-    event.preventDefault();
-    
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    const email = document.getElementById('email').value;
-    const fechaNacimiento = new Date(document.getElementById('fechaNacimiento').value);
-    
-    // Validar edad mínima (18 años)
-    const hoy = new Date();
-    const edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
-    if (edad < 18) {
-        alert('Debes ser mayor de 18 años para registrarte');
-        return false;
-    }
-    
-    // Validar contraseña fuerte
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (!passwordRegex.test(password)) {
-        alert('La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial');
-        return false;
-    }
-    
-    // Validar que las contraseñas coincidan
-    if (password !== confirmPassword) {
-        alert('Las contraseñas no coinciden');
-        return false;
-    }
-    
-    // Validar formato de email
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (!emailRegex.test(email)) {
-        alert('Por favor, introduce un email válido');
-        return false;
-    }
-    
-    // Si todo está correcto, mostrar mensaje de éxito
-    alert('¡Registro exitoso!');
-    window.location.href = 'signin.html';
-    return true;
-}
-
-// Las funciones togglePassword y mostrarLOPD se mantienen igual que antes
-
-// Función para alternar la visibilidad de la contraseña
-function togglePassword(inputId) {
-    const passwordInput = document.getElementById(inputId);
-    const toggleIcon = passwordInput.nextElementSibling.querySelector('.toggle-password');
-    
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        toggleIcon.classList.remove('fa-eye');
-        toggleIcon.classList.add('fa-eye-slash');
-    } else {
-        passwordInput.type = 'password';
-        toggleIcon.classList.remove('fa-eye-slash');
-        toggleIcon.classList.add('fa-eye');
-    }
-}
-
-function mostrarLOPD() {
-    document.getElementById('lopdModal').style.display = 'block';
-}
-
-function cerrarLOPD() {
-    document.getElementById('lopdModal').style.display = 'none';
-}
-
-// Cerrar el modal si se hace clic fuera del contenido
-window.onclick = function(event) {
-    let modal = document.getElementById('lopdModal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
+    });
+});
