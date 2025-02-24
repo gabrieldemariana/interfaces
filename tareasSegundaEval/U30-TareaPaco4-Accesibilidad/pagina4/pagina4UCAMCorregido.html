@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Scripts y metadatos existentes se mantienen igual -->
+    <title>
+      UCAM Universidad Católica San Antonio de Murcia | Página Principal
+    </title>
+
+    <!-- Agregar descripción para lectores de pantalla -->
+    <meta
+      name="description"
+      content="Página principal de la Universidad Católica San Antonio de Murcia. Accede a información sobre grados, másteres, doctorados y vida universitaria."
+    />
+
+    <!-- Los estilos existentes se mantienen -->
+  </head>
+  <body>
+    <!-- Skip link mejorado -->
+    <a
+      href="#main-content"
+      class="skip-link"
+      role="navigation"
+      aria-label="Saltar al contenido principal"
+    >
+      Saltar al contenido principal
+    </a>
+
+    <div class="layout-container" role="document">
+      <!-- Header mejorado -->
+      <header role="banner" aria-label="Cabecera principal">
+        <nav class="header__top" role="navigation" aria-label="Menú superior">
+          <div class="header__top-left">
+            <!-- Menú superior izquierdo -->
+            <ul role="menubar" aria-label="Enlaces principales">
+              <li role="none">
+                <a
+                  href="http://investigacion.ucam.edu"
+                  role="menuitem"
+                  aria-label="Ir a la sección de Investigación"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Investigación
+                </a>
+              </li>
+              <!-- Otros elementos del menú con estructura similar -->
+            </ul>
+          </div>
+
+          <!-- Selector de idioma accesible -->
+          <div
+            class="language-selector"
+            role="navigation"
+            aria-label="Selector de idioma"
+          >
+            <button
+              aria-expanded="false"
+              aria-controls="language-menu"
+              class="language-button"
+            >
+              <img
+                src="/themes/custom/ucam/assets/img/bandera-es.svg"
+                alt="Bandera española"
+                width="18"
+                height="11"
+              />
+              <span>Español</span>
+            </button>
+            <ul id="language-menu" role="menu" aria-label="Idiomas disponibles">
+              <li role="none">
+                <a
+                  href="https://international.ucam.edu/"
+                  role="menuitem"
+                  lang="en"
+                  hreflang="en"
+                >
+                  <img
+                    src="/themes/custom/ucam/assets/img/bandera-en.svg"
+                    alt="English version"
+                    width="18"
+                    height="11"
+                  />
+                  <span>English</span>
+                </a>
+              </li>
+              <!-- Otros idiomas -->
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Contenido principal -->
+      <main id="main-content" role="main">
+        <!-- Aquí va el contenido principal -->
+      </main>
+    </div>
+  </body>
+</html>

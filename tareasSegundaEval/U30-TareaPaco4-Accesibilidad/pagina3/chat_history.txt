@@ -1,0 +1,206 @@
+CONVERSACIÓN SOBRE MEJORAS DE ACCESIBILIDAD WCAG 2.2
+=================================================
+
+PREGUNTA INICIAL:
+---------------
+Quiero que modifiques este código HTML para que cumpla con las normas de accesibilidad WCAG 2.2, asegurando los siguientes puntos:
+
+1. Atributos ARIA: Agregar atributos aria-label, aria-labelledby y aria-describedby en formularios, botones, enlaces e imágenes según corresponda.
+2. Estructura semántica: Reemplazar etiquetas genéricas por elementos HTML5 adecuados (<header>, <main>, <section>, <article>, <footer>).
+3. Texto alternativo descriptivo: Asegurar que todas las imágenes tengan un alt significativo.
+4. Encabezados jerárquicos: Usar <h1> para títulos principales y <h2>-<h6> para subtítulos, evitando saltos en la jerarquía.
+5. Navegación por teclado: Incluir tabindex y role adecuados para mejorar la navegación sin mouse.
+6. Contraste adecuado: Verificar que los colores de fondo y texto cumplan con la relación de contraste mínima (4.5:1 para AA y 7:1 para AAA).
+7. Formularios accesibles: Asegurar que cada input tenga un label asociado y que los botones sean accesibles mediante teclado.
+8. Corrección de enlaces: Agregar descripciones significativas en los enlaces en lugar de # o textos genéricos como "Haz clic aquí".
+
+RESPUESTA:
+---------
+# Análisis y Mejoras de Accesibilidad
+
+¡Hola! Te ayudaré a mejorar la accesibilidad del código HTML proporcionado. Analizaré el archivo principal y sugeriré las modificaciones necesarias para cumplir con WCAG 2.2.
+
+## Problemas Identificados y Soluciones
+
+1. Estructura Semántica:
+- El código ya utiliza elementos semánticos como <header>, <main>, <footer>, pero podemos mejorar algunas secciones.
+
+2. Imágenes:
+- La imagen del logo necesita un alt más descriptivo
+- La imagen de perfil ya tiene un buen alt
+
+3. Navegación:
+- El menú de navegación necesita mejoras en sus roles y atributos ARIA
+
+4. Contraste:
+- Se necesita verificar el contraste de colores (esto requeriría acceso al CSS)
+
+CÓDIGO HTML MEJORADO:
+-------------------
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Portfolio profesional de Óscar Salazar, Web Developer especializado en desarrollo web" />
+    
+    <!-- Estilos existentes -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Resto de enlaces CSS... -->
+    
+    <title>Portfolio - Óscar Salazar | Desarrollador Web</title>
+  </head>
+  <body>
+    <div class="layout" role="document">
+      <aside class="layout__aside layout__aside--hidden" aria-label="Información del perfil">
+        <section class="aside__user-info">
+          <div class="user-info__general">
+            <div class="user-info__container-imagen" role="img" aria-label="Sección de perfil">
+              <img
+                src="assets/img/foto perfil sin fondo.png"
+                alt="Fotografía profesional de Óscar Salazar"
+                class="user-info__image"
+              />
+            </div>
+            <h1 class="user-info__name">Óscar Salazar</h1>
+            <h2 class="user-info__job">Web Developer</h2>
+          </div>
+
+          <nav class="layout__menu" role="navigation">
+            <ul class="menu__list">
+              <li class="menu__option">
+                <a href="index.php" class="menu__link" aria-current="page">
+                  <i class="fa-solid fa-house menu__icon" aria-hidden="true"></i>
+                  <span class="menu__overlay">Inicio</span>
+                </a>
+              </li>
+              <!-- Resto de elementos del menú... -->
+            </ul>
+          </nav>
+
+          <section class="user-info__links">
+            <h3 class="visually-hidden">Redes Sociales</h3>
+            <ul class="links__social" role="list">
+              <li class="social__option">
+                <a 
+                  href="curriculum.php" 
+                  class="social__link"
+                  aria-label="Ver mi currículum completo"
+                >
+                  <i class="social__icon fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                </a>
+              </li>
+              <!-- Resto de redes sociales... -->
+            </ul>
+          </section>
+
+          <section class="user-info__buttons">
+            <a 
+              href="contacto.php" 
+              class="user-info__btn"
+              role="button"
+              aria-label="Formulario de contacto"
+            >Contactar</a>
+            <a 
+              href="assets/diplomas/pdf/cv/cvOscarSalazarVillajosLinkeding.pdf"
+              target="_blank"
+              class="user-info__btn"
+              role="button"
+              aria-label="Descargar CV en PDF"
+              rel="noopener"
+            >CV</a>
+          </section>
+
+          <footer class="user-info__footer">
+            <p>&copy; Óscar Salazar <span aria-label="año">2025</span></p>
+          </footer>
+        </section>
+      </aside>
+
+      <button
+        class="layout__menu-toggle"
+        aria-expanded="false"
+        aria-controls="main-menu"
+        aria-label="Abrir menú de navegación"
+      >
+        <i class="menu-toggle__icon fa-solid fa-bars" aria-hidden="true"></i>
+        <i class="menu-toggle__icon fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+
+      <main class="layout__content" id="main-content">
+        <section class="content__page" aria-labelledby="page-title">
+          <img
+            src="assets/logo/logoperfectobicolor.svg"
+            alt="Logo de Óscar Salazar - Desarrollador Web"
+            class="page__logo"
+          />
+          <h1 id="page-title" class="page__name">
+            <span class="page__name--o">Ó</span>scar
+            <span class="page__name--s">S</span>alazar
+            <span class="page__name--v">V</span>illajos
+          </h1>
+          <h2 class="page__job">Web Developer</h2>
+        </section>
+      </main>
+    </div>
+
+    <!-- Script para el menú con gestión de accesibilidad -->
+    <script>
+      const menuToggle = document.querySelector('.layout__menu-toggle');
+      menuToggle.addEventListener('click', () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+      });
+    </script>
+  </body>
+</html>
+
+PRINCIPALES MEJORAS IMPLEMENTADAS:
+------------------------------
+1. Meta tags mejorados:
+   - Se agregó una descripción meta
+   - Se mejoró el título de la página
+   - Se agregó maximum-scale para mejor accesibilidad móvil
+
+2. Estructura semántica:
+   - Se organizó mejor la jerarquía de encabezados
+   - Se agregaron roles semánticos apropiados
+   - Se añadieron secciones con encabezados ocultos donde era necesario
+
+3. Navegación:
+   - Se mejoró la estructura del menú
+   - Se agregaron atributos aria-current para la página actual
+   - Se implementó un mejor control del menú móvil
+
+4. Enlaces y botones:
+   - Se agregaron descripciones más significativas
+   - Se implementaron atributos aria-label donde era necesario
+   - Se agregó rel="noopener" para enlaces externos
+
+5. Imágenes:
+   - Se mejoraron los textos alternativos
+   - Se agregaron roles y descripciones apropiadas
+
+RECOMENDACIONES CSS:
+------------------
+/* Agregar estas clases para mejorar la accesibilidad */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Asegurar contraste adecuado */
+:root {
+  --text-color: #333333;
+  --background-color: #ffffff;
+  --link-color: #0056b3;
+}
+
+=================================================
+Fin de la conversación

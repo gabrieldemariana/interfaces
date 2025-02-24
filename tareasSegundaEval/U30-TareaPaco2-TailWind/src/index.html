@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Scraper</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body class="page-container">
+    <div class="container mx-auto px-4">
+      <h1 class="main-title">Web Scraper</h1>
+
+      <div class="form-container">
+        <div class="mb-4 p-4 bg-yellow-50 text-yellow-700 rounded-lg">
+          Importante: Antes de usar el scraper, debes autorizar el uso del proxy
+          visitando:
+          <a
+            href="https://cors-anywhere.herokuapp.com/corsdemo"
+            target="_blank"
+            class="text-blue-600 hover:underline"
+          >
+            https://cors-anywhere.herokuapp.com/corsdemo
+          </a>
+        </div>
+        <form id="scraperForm" class="space-y-6">
+          <div>
+            <label for="url" class="input-label">URL</label>
+            <input
+              type="url"
+              id="url"
+              required
+              placeholder="https://ejemplo.com"
+              class="input-field"
+            />
+          </div>
+
+          <div>
+            <label for="xpath" class="input-label">XPath</label>
+            <input
+              type="text"
+              id="xpath"
+              required
+              placeholder="//h1"
+              class="input-field"
+            />
+          </div>
+
+          <button type="submit" class="submit-button">Realizar Scraping</button>
+        </form>
+      </div>
+
+      <div id="results" class="results-container hidden">
+        <h2 class="text-xl font-semibold mb-4">Resultados</h2>
+        <div id="resultsList" class="space-y-3"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

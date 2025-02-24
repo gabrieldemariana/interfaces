@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Meta Etiquetas -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!-- Estilos -->
+    <link
+      rel="stylesheet"
+      href="assets/Fonts/fontawesome-free-6.1.2-web/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/scroll.css" />
+    <link rel="stylesheet" href="assets/Fonts/poppins/poppins.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <!-- <link rel="icon" href="assets/logo/favicon.ico" type="image/x-icon"> -->
+    <!-- favicon -->
+    <link
+      rel="icon"
+      href="../assets/img/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Oscar Salazar Villajos | Desarrollo de paginas web a medida"
+    />
+    <meta property="og:type" content="Curriculum" />
+    <meta
+      property="og:image"
+      content="http://oscarsalazar.es/assets/img/OpenGraphImagen.png"
+    />
+    <meta
+      property="og:description"
+      content="Mi nombre es Oscar, soy desarrollador, mi especialidad es crear paginas web."
+    />
+    <!-- Google -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-K0SR39JS4X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-K0SR39JS4X");
+    </script>
+
+    <!-- SCRIPT -->
+    <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/certificados.js" defer></script>
+    <title>Portafolio - Oscar Salazar</title>
+  </head>
+
+  <body>
+    <!-- Layout Principal -->
+    <div class="layout">
+      <!-- Barra Lateral (info del usuario) -->
+      <aside class="layout__aside layout__aside--hidden">
+        <section class="aside__user-info">
+          <!-- Informacion general usuario -->
+
+          <div class="user-info__general">
+            <div class="user-info__container-imagen">
+              <img
+                src="assets/img/foto perfil sin fondo.png"
+                alt="Fotografía de Óscar Salazar"
+                class="user-info__image"
+              />
+            </div>
+            <h2 class="user-info__name">Óscar Salazar</h2>
+            <h4 class="user-info__job">Web Developer</h4>
+          </div>
+
+          <!-- Menu de navagacion -->
+
+          <nav class="layout__menu">
+            <ul
+              class="menu__list"
+              role="navigation"
+              aria-label="Menú de navegación principal"
+            >
+              <li class="menu__option">
+                <a href="index.php" class="menu__link" aria-label="Inicio">
+                  <i
+                    class="fa-solid fa-house menu__icon"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="menu__overlay">Home</span>
+                </a>
+              </li>
+              <li class="menu__option">
+                <a href="sobre-mi.php" class="menu__link" aria-label="Sobre mí">
+                  <i class="fa-solid fa-user menu__icon" aria-hidden="true"></i>
+                  <span class="menu__overlay">Sobre mi</span>
+                </a>
+              </li>
+              <li class="menu__option">
+                <a
+                  href="curriculum.php"
+                  class="menu__link"
+                  aria-label="Currículum"
+                >
+                  <i
+                    class="fa-solid fa-graduation-cap menu__icon"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="menu__overlay">Curriculum</span>
+                </a>
+              </li>
+              <li class="menu__option">
+                <a
+                  href="portafolio.php"
+                  class="menu__link"
+                  aria-label="Portafolio"
+                >
+                  <i
+                    class="fa-solid fa-briefcase menu__icon"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="menu__overlay">Portafolio</span>
+                </a>
+              </li>
+              <!-- 
+                <li class="menu__option">
+                    <a href="blog.php" class="menu__link menu__link--active">
+                        <i class="fa-solid fa-book menu__icon"></i>
+                        <span class="menu__overlay">Blog</span>
+                    </a>
+                </li> -->
+              <li class="menu__option">
+                <a href="contacto.php" class="menu__link" aria-label="Contacto">
+                  <i
+                    class="fa-solid fa-envelope menu__icon"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="menu__overlay">Contacto</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- Links a redes sociales -->
+          <section
+            class="user-info__links"
+            aria-label="Enlaces a redes sociales"
+          >
+            <ul class="links__social">
+              <li class="social__option">
+                <a
+                  href="curriculum.php"
+                  class="social__link"
+                  aria-label="Currículum"
+                >
+                  <i
+                    class="social__icon fa-solid fa-graduation-cap"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+              <li class="social__option">
+                <a
+                  href="https://www.linkedin.com/in/oscar-salazar-git"
+                  class="social__link"
+                  aria-label="LinkedIn"
+                >
+                  <i
+                    class="social__icon fa-brands fa-linkedin"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+              <li class="social__option">
+                <a
+                  href="contacto.php"
+                  class="social__link"
+                  aria-label="Correo electrónico"
+                >
+                  <i
+                    class="social__icon fa-solid fa-envelope"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+            </ul>
+          </section>
+          <!-- Boton descargar curriculum -->
+          <section class="user-info__buttons">
+            <a href="contacto.php" class="user-info__btn" role="button"
+              >Contactar</a
+            >
+            <a
+              href="assets/diplomas/pdf/cv/cvOscarSalazarVillajosLinkeding.pdf"
+              target="_blank"
+              class="user-info__btn"
+              role="button"
+              >CV</a
+            >
+          </section>
+
+          <!-- Pie de pagina -->
+
+          <footer class="user-info__footer">&copy Óscar Salazar 2025</footer>
+        </section>
+      </aside>
+
+      <!-- MENU responsive -->
+
+      <div
+        class="layout__menu-toggle"
+        role="button"
+        aria-label="Abrir/cerrar menú de navegación"
+      >
+        <i class="menu-toggle__icon fa-solid fa-bars" aria-hidden="true"></i>
+        <i class="menu-toggle__icon fa-solid fa-xmark" aria-hidden="true"></i>
+      </div>
+      <!-- Contenido prinicipal -->
+      <main class="layout__content" role="main">
+        <section class="content__page">
+          <img
+            src="assets/logo/logoperfectobicolor.svg"
+            alt="logo"
+            class="page__logo"
+          />
+          <h1 class="page__name">
+            <span class="page__name--o">Ó</span>scar
+            <span class="page__name--s">S</span>alazar
+            <span class="page__name--v">V</span>illajos
+          </h1>
+          <h2 class="page__job">Web Developer</h2>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+HISTORIAL DE CHAT - CONSULTA SOBRE ACCESIBILIDAD WCAG 2.2
+
+Usuario:
+Quiero que modifiques este código HTML para que cumpla con las normas de accesibilidad WCAG 2.2, asegurando los siguientes puntos:
+
+1. Atributos ARIA: Agregar atributos `aria-label`, `aria-labelledby` y `aria-describedby` en formularios, botones, enlaces e imágenes según corresponda.
+2. Estructura semántica: Reemplazar etiquetas genéricas por elementos HTML5 adecuados (`<header>`, `<main>`, `<section>`, `<article>`, `<footer>`).
+3. Texto alternativo descriptivo: Asegurar que todas las imágenes tengan un `alt` significativo.
+4. Encabezados jerárquicos: Usar `<h1>` para títulos principales y `<h2>-<h6>` para subtítulos, evitando saltos en la jerarquía.
+5. Navegación por teclado: Incluir `tabindex` y `role` adecuados para mejorar la navegación sin mouse.
+6. Contraste adecuado: Verificar que los colores de fondo y texto cumplan con la relación de contraste mínima (4.5:1 para AA y 7:1 para AAA).
+7. Formularios accesibles: Asegurar que cada `input` tenga un `label` asociado y que los botones sean accesibles mediante teclado.
+8. Corrección de enlaces: Agregar descripciones significativas en los enlaces en lugar de `#` o textos genéricos como "Haz clic aquí".
+
+Asistente:
+¡Hola! Te ayudaré a modificar el código HTML para mejorar su accesibilidad según las normas WCAG 2.2. Analizaré el archivo `pagina4.html` y propondré los cambios necesarios.
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería de Animales</title>
+    <!-- Añadimos los estilos en el head -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333; /* Aseguramos contraste adecuado */
+        margin-bottom: 30px;
+      }
+
+      .gallery {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      img {
+        max-width: 400px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      img:focus, /* Añadimos focus para navegación por teclado */
+      img:hover {
+        transform: scale(1.05);
+        outline: 3px solid #4a90e2; /* Indicador visual de foco */
+      }
+    </style>
+  </head>
+  <body>
+    <header role="banner">
+      <h1 id="gallery-title">Galería de Animales</h1>
+    </header>
+
+    <main role="main">
+      <section 
+        class="gallery" 
+        aria-labelledby="gallery-title"
+        role="region"
+      >
+        <img 
+          src="images/cat.webp" 
+          alt="Gato doméstico de color gris"
+          tabindex="0"
+          role="img"
+          aria-label="Fotografía de un gato doméstico"
+        />
+        <img 
+          src="images/dog.webp" 
+          alt="Perro labrador de color dorado"
+          tabindex="0"
+          role="img"
+          aria-label="Fotografía de un perro labrador"
+        />
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>&copy; 2024 Galería de Animales</p>
+    </footer>
+  </body>
+</html>
+
+Explicación de los cambios realizados:
+
+1. Estructura semántica:
+   - Se agregaron las etiquetas `<header>`, `<main>`, `<section>` y `<footer>`
+   - Se añadieron roles ARIA apropiados (`role="banner"`, `role="main"`, etc.)
+
+2. Texto alternativo:
+   - Se agregaron atributos `alt` descriptivos a las imágenes
+   - Se incluyeron `aria-label` para proporcionar descripciones más detalladas
+
+3. Navegación por teclado:
+   - Se añadió `tabindex="0"` a las imágenes para permitir la navegación por teclado
+   - Se agregó estilo visual para el estado `:focus`
+
+4. Contraste y estilos:
+   - Se mantuvo el color de texto #333 sobre fondo #f5f5f5 que cumple con los requisitos de contraste
+   - Se añadió un indicador visual de foco para mejorar la accesibilidad
+
+5. Roles y atributos ARIA:
+   - Se agregó `aria-labelledby` para conectar el título con la sección de la galería
+   - Se incluyeron roles apropiados para cada elemento
+
+6. Mejoras adicionales:
+   - Se mejoró el título de la página para ser más descriptivo
+   - Se agregó un footer con información de copyright
+   - Se organizó mejor la estructura del documento
+
+
+--- FIN DEL CHAT ---

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería de Animales</title>
+    <!-- Añadimos los estilos en el head -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333; /* Aseguramos contraste adecuado */
+        margin-bottom: 30px;
+      }
+
+      .gallery {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      img {
+        max-width: 400px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      img:focus, /* Añadimos focus para navegación por teclado */
+      img:hover {
+        transform: scale(1.05);
+        outline: 3px solid #4a90e2; /* Indicador visual de foco */
+      }
+    </style>
+  </head>
+  <body>
+    <header role="banner">
+      <h1 id="gallery-title">Galería de Animales</h1>
+    </header>
+
+    <main role="main">
+      <section class="gallery" aria-labelledby="gallery-title" role="region">
+        <img
+          src="images/cat.webp"
+          alt="Gato doméstico de color gris"
+          tabindex="0"
+          role="img"
+          aria-label="Fotografía de un gato doméstico"
+        />
+        <img
+          src="images/dog.webp"
+          alt="Perro labrador de color dorado"
+          tabindex="0"
+          role="img"
+          aria-label="Fotografía de un perro labrador"
+        />
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>&copy; 2024 Galería de Animales</p>
+    </footer>
+  </body>
+</html>

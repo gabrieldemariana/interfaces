@@ -1,0 +1,14 @@
+<!-- Prompt para mejorar la accesibilidad según WCAG 2.2 -->
+
+Modifica este código HTML para que cumpla con las normas de accesibilidad WCAG 2.2, asegurando los siguientes puntos:
+
+1. **Atributos ARIA**: Agregar atributos `aria-label`, `aria-labelledby` y `aria-describedby` en formularios, botones, enlaces e imágenes según corresponda.
+2. **Estructura semántica**: Reemplazar etiquetas genéricas por elementos HTML5 adecuados (`<header>`, `<main>`, `<section>`, `<article>`, `<footer>`).
+3. **Texto alternativo descriptivo**: Asegurar que todas las imágenes tengan un `alt` significativo.
+4. **Encabezados jerárquicos**: Usar `<h1>` para títulos principales y `<h2>-<h6>` para subtítulos, evitando saltos en la jerarquía.
+5. **Navegación por teclado**: Incluir `tabindex` y `role` adecuados para mejorar la navegación sin mouse.
+6. **Contraste adecuado**: Verificar que los colores de fondo y texto cumplan con la relación de contraste mínima (4.5:1 para AA y 7:1 para AAA).
+7. **Formularios accesibles**: Asegurar que cada `input` tenga un `label` asociado y que los botones sean accesibles mediante teclado.
+8. **Corrección de enlaces**: Agregar descripciones significativas en los enlaces en lugar de `#` o textos genéricos como "Haz clic aquí".
+
+Asegúrate de que estos cambios se implementen correctamente en el código proporcionado para mejorar la accesibilidad de la página.
